@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* primary colors */
+    --orange: hsl(25, 97%, 53%);
+    /* neutral colors */
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+    /* font family */
+    --ff-overpass: 'Overpass', sans-serif;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    font-family: var(--ff-overpass);
+    background: var(--very-dark-blue);
+}
+
+.sr-only {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.container {
+    width: 26rem;
+    background: var(--dark-blue);
+    border-radius: 1.85rem;
+    overflow: hidden;
+}
+
+section.container .rating {
+    padding: 2rem;
+}
+
+h2 {
+    font-size: 1.7rem;
+    color: var(--white);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h2 img {
+    display: block;
+    width: fit-content;
+    padding: 1rem;
+    background: hsl(217, 11%, 23%);
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    user-select: none;
+}
+
+section.container .description {
+    font-size: 0.9375rem;
+    color: var(--medium-grey);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+ul.points {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.8rem;
+}
+
+ul.points .point {
+    display: flex;
+    aspect-ratio: 1 / 1;
+    background: hsl(219, 11%, 24%);
+    border-radius: 50%;
+    color: var(--medium-grey);
+    justify-content: center;
+    align-items: center;
+    width: 3.3rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color .3s linear;
+}
+
+ul.points .point:not(.nohover):hover {
+    color: var(--white);
+    background-color: var(--orange);
+}
+
+section.container .submit {
+    width: 100%;
+    padding: 1rem 0;
+    border-radius: 2rem;
+    background-color: var(--orange);
+    border: none;
+    font-size: .8rem;
+    letter-spacing: .15rem;
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: background-color .3s linear;
+    cursor: pointer;
+    user-select: none;
+}
+
+section.container .submit:hover {
+    color: var(--orange);
+    background: var(--white);
+}
+
+section.container .submit:focus-visible {
+    outline: 2px solid hsl(25, 85%, 26%);
+}
+
+li.point.checked {
+    color: var(--white);
+    background-color: var(--light-grey);
+}
+
+section.container div.submitted_state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.submitted_state .submitted_rating {
+    margin: 2rem 0;
+    color: var(--orange);
+    background-color: hsl(219, 11%, 24%);
+    width: fit-content;
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+}
+
+.submitted_state .description {
+    width: 21rem;
+}
+
+section.container div.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 560px) {
+    section.container {
+        width: 22rem;
+        min-width: 22rem;
+        border-radius: 1rem;
+    }
+
+    section.container .rating {
+        padding: 1.4rem;
+    }
+
+    ul.points .point {
+        width: 2.7rem;
+    }
+
+    h2 img {
+        padding: .7rem;
+    }
+
+    div.submitted_state .description {
+        padding: .5rem;
+    }
+}

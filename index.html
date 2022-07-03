@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Frontend Mentor | Interactive rating component</title>
+</head>
+
+<body>
+  <main>
+    <section class="container">
+      <h1 class="sr-only">Frontend Mentor | Interactive rating component</h1>
+      <div class="rating">
+        <h2>
+          <img src="./images/icon-star.svg" aria-hidden="true" alt="">
+          How did we do?
+        </h2>
+        <p class="description">
+          Please let us know how we did with your support request. All feedback is appreciated to help us improve our
+          offering!
+        </p>
+        <ul class="points">
+          <li class="point" data-point="1">1</li>
+          <li class="point" data-point="2">2</li>
+          <li class="point" data-point="3">3</li>
+          <li class="point" data-point="4">4</li>
+          <li class="point" data-point="5">5</li>
+        </ul>
+        <button class="submit">Submit</button>
+      </div>
+      <!-- submitted section-->
+      <div class="rating submitted_state hidden">
+        <div class="head">
+          <img src="./images/illustration-thank-you.svg" alt="" aria-hidden="true">
+          <div class="submitted_rating">
+            You selected
+            <span class="selected_point"></span>
+            out of 5
+          </div>
+        </div>
+        <h2>Thank you!</h2>
+        <p class="description">We appreciate you taking the time to give a rating.
+          If you ever need more support, dont't hesitate to get in tough!
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
